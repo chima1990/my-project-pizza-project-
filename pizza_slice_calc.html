@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Slice Calculator</title>
+</head>
+
+<body>
+    <h1>Pizza Slice Calculator</h1>
+    <button onclick="splitMyPizza()">Calculate Pizza Slices</button>
+    <div id="output"></div>
+
+    <script>
+        function splitMyPizza() {
+            // Ask for the number of slices on the pizza
+            let slices = parseInt(prompt("Enter the number of slices on the pizza:"));
+
+            // Ask how many people are sharing the pizza
+            let people = parseInt(prompt("Enter the number of people sharing the pizza:"));
+
+            // Calculate the number of slices each person gets
+            let slicesPerPerson = Math.floor(slices / people);
+
+            // Calculate the remaining slices
+            let remainingSlices = slices % people;
+
+            // Display results in the output div
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `<p>Each person gets ${slicesPerPerson} slices.</p>`;
+
+            if (remainingSlices > 0) {
+                outputDiv.innerHTML += `<p>There will be ${remainingSlices} slice(s) remaining.</p>`;
+            } else {
+                outputDiv.innerHTML += `<p>There will be no slices remaining.</p>`;
+            }
+        }
+    </script>
+</body>
+
+</html>
+  
