@@ -22,3 +22,6 @@ const costPerPerson = finalBill / people;
 // Display the results
 console.log(`Total bill including tip is £${finalBill.toFixed(2)}`);
 console.log(`Total cost per person is £${costPerPerson.toFixed(2)}`);
+
+//Display the object on the webpage
+document.getElementById('output').textContent= JSON.stringify(jsObject, null, 2);
